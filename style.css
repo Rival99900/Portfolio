@@ -81,6 +81,14 @@ ul li {
   margin-bottom: 5px;
 }
 
+/* Bloc adresse de déploiement (section stage) */
+.deploiement {
+  background-color: #eaf4ff;
+  border-left: 4px solid #0077cc;
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+
 .btn-download {
   display: inline-block;
   background-color: #007BFF; /* bleu moderne */

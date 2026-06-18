@@ -167,6 +167,95 @@
   </table>
 </section>
 
+  <section id="stage">
+  <h2>Stage de première année chez Lovotech (chatbot IA)</h2>
+
+  <p class="deploiement">
+    <strong>Adresse de déploiement de cette page :</strong>
+    <a href="https://rival960-hub.github.io/Portfolio/#stage">https://rival960-hub.github.io/Portfolio/#stage</a>.
+    C’est ici que je rapporte les activités de mon stage de première année.
+  </p>
+
+  <h3>Contexte et mission</h3>
+  <p>
+    J’ai fait mon stage de première année chez Lovotech, en mai et juin 2026. L’entreprise garde
+    près de 3 000 factures dans un seul fichier Excel, et y retrouver une information demandait du
+    temps. On m’a confié la construction d’un chatbot qui répond à des questions sur ces factures,
+    en langage courant. J’ai tout écrit en Python, sans base de données : le fichier est chargé en
+    mémoire avec pandas, ce qui suffisait pour ce volume et m’évitait de monter un serveur SQL pour rien.
+  </p>
+
+  <h3>Réalisations (support de présentation)</h3>
+  <table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Réalisation</th>
+        <th>Compétences mobilisées</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>16/05/2026</td>
+        <td>Étude de Python et de ses bibliothèques (pandas, scikit-learn, Flask, EasyOCR)</td>
+        <td>Organiser son développement professionnel</td>
+      </tr>
+      <tr>
+        <td>16/05/2026</td>
+        <td>Étude de l’existant et définition de la problématique</td>
+        <td>Travailler en mode projet ; organiser son développement</td>
+      </tr>
+      <tr>
+        <td>23/05/2026</td>
+        <td>Choix de la méthode Kanban et architecture sans base de données</td>
+        <td>Gérer le patrimoine informatique ; travailler en mode projet</td>
+      </tr>
+      <tr>
+        <td>23/05/2026</td>
+        <td>Chargement du fichier Excel de 3 000 factures en mémoire (pandas)</td>
+        <td>Gérer le patrimoine informatique</td>
+      </tr>
+      <tr>
+        <td>30/05/2026</td>
+        <td>Détection d’intention (TF-IDF + régression logistique) et 10 fonctions métier</td>
+        <td>Répondre aux demandes ; mode projet ; mettre à disposition un service</td>
+      </tr>
+      <tr>
+        <td>30/05/2026</td>
+        <td>Interface web du chatbot et comparaison de trois modèles d’IA</td>
+        <td>Développer la présence en ligne ; travailler en mode projet</td>
+      </tr>
+      <tr>
+        <td>12/06/2026</td>
+        <td>Saisie vocale, lecture d’images (OCR local) et livraison du chatbot</td>
+        <td>Gérer le patrimoine ; répondre aux demandes ; mettre à disposition un service</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Ce que j’en retiens</h3>
+  <p>
+    Le chatbot comprend la demande grâce à un petit modèle d’intention (TF-IDF puis régression
+    logistique avec scikit-learn). Il lit aussi une facture photographiée, avec EasyOCR en local,
+    sans envoyer l’image vers un service extérieur, et il accepte la voix. Le plus dur n’a pas été
+    le code. Un Excel rempli à la main est plein de trous et de formats incohérents : tant que je ne
+    nettoyais pas les libellés en amont, le modèle se trompait de fonction.
+  </p>
+
+  <h3>Documents et documentation</h3>
+  <p>
+    <a href="Tableau_Synthese_E5_BTS_SIO_Lovotech.pdf" target="_blank" class="btn-download">🔎 Voir le tableau de synthèse E5 (PDF)</a>
+    <a href="Tableau_Synthese_E5_BTS_SIO_Lovotech.pdf" download class="btn-download">📄 Télécharger le tableau E5</a>
+  </p>
+  <p>Si le jury veut entrer dans le détail, voici la documentation des outils utilisés :</p>
+  <ul>
+    <li><a href="https://pandas.pydata.org/docs/" target="_blank">pandas</a> : lecture et manipulation du fichier Excel</li>
+    <li><a href="https://scikit-learn.org/stable/" target="_blank">scikit-learn</a> : TF-IDF et régression logistique pour la détection d’intention</li>
+    <li><a href="https://flask.palletsprojects.com/" target="_blank">Flask</a> : interface web du chatbot</li>
+    <li><a href="https://www.jaided.ai/easyocr/" target="_blank">EasyOCR</a> : lecture des factures en images, en local</li>
+  </ul>
+</section>
+
   <section id="bilan">
   <h2>Bilan</h2>
   <p>
