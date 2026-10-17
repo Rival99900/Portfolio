@@ -15,7 +15,7 @@ Le site est structuré en plusieurs sections :
 - **CV** : Mon parcours scolaire, mes expériences, mes compétences techniques.
 - **Veille technologique** : Suivi des évolutions dans le domaine du développement web, notamment les frameworks JavaScript.
 - **Épreuve E5** : Synthèse de mes compétences individuelles en lien avec le référentiel du BTS SIO.
-- **Stage de première année** : Activités réalisées chez Lovotech (développement d'un chatbot IA), avec le tableau de synthèse E5 en PDF et l'adresse de déploiement de la page.
+- **Stage de première année** : Activités réalisées chez Lovotech (développement d'un chatbot IA), avec le tableau de synthèse E5 en PDF.
 - **Bilan** : Retour personnel sur les missions réalisées et les compétences acquises.
 
 ## 🛠️ Technologies utilisées
@@ -27,13 +27,15 @@ Le site est structuré en plusieurs sections :
 ## 📦 Organisation du projet
 
 Le projet est organisé de manière claire :
-<br>**portfolio/
-<br>├── index.html 
-<br>├── style.css 
-<br>├── logo.png 
-<br>├── cv.pdf 
-<br>├── Tableau_Synthese_E5_BTS_SIO_Lovotech.pdf 
-<br>└── README.md**
+```text
+portfolio/
+├── index.html 
+├── style.css 
+├── logo.png 
+├── cv.pdf 
+├── Tableau_Synthese_E5_BTS_SIO_Lovotech.pdf 
+└── README.md
+```
 
 ## 🚀 Mise en ligne
 
