@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Projet Personnel (M2L) : application Java de gestion du personnel des ligues. Explications, MCD, captures d'écran, tests et liens vers le code.">
+  <title>Projet Personnel (M2L) – Albert</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/png" href="../images/logo.png">
+</head>
+<body>
+
+  <!-- En-tête de la page projet -->
+  <header class="hero">
+    <div class="hero-contenu">
+      <p class="etiquette"><a href="../index.html" style="color:#fff">← Retour au portfolio</a></p>
+      <h1>Projet Personnel (M2L)</h1>
+      <p class="accroche">
+        Une application Java en ligne de commande pour gérer le personnel des ligues : qui appartient à quelle ligue,
+        qui en est l'administrateur, et quand chaque employé arrive et part.
+      </p>
+      <ul class="tags" aria-label="Technologies">
+        <li>Java 8</li>
+        <li>Eclipse + Maven</li>
+        <li>JUnit 5</li>
+        <li>Git / GitHub</li>
+        <li>MCD + SQL</li>
+      </ul>
+    </div>
+  </header>
+
+  <nav class="menu" aria-label="Sections de la page projet">
+    <ul>
+      <li><a href="#resume">En bref</a></li>
+      <li><a href="#ressources">Ressources</a></li>
+      <li><a href="#realise">Ce que j'ai fait</a></li>
+      <li><a href="#mcd">MCD</a></li>
+      <li><a href="#captures">Captures</a></li>
+      <li><a href="#arbre">Arbre des menus</a></li>
+      <li><a href="#liens">Liens</a></li>
+      <li><a href="#bilan">Bilan</a></li>
+    </ul>
+  </nav>
+
+  <main class="conteneur">
+
+    <!-- 1. En bref -->
+    <section id="resume" class="carte">
+      <h2>En bref</h2>
+      <p>
+        Le projet « M2L » est un exercice de groupe de BTS SIO. Il faut développer une application qui gère les
+        <strong>ligues</strong> d'une organisation et leurs <strong>employés</strong>. Chaque employé appartient à une seule ligue.
+        Une ligue a un <strong>administrateur</strong>, et un super-utilisateur (le <em>root</em>) gère l'ensemble.
+      </p>
+      <p>
+        Le sujet demande aussi une architecture en trois niveaux, une sauvegarde des données d'une session à l'autre,
+        et des tests unitaires. Ma partie : le changement d'administrateur et la saisie des dates en ligne de commande,
+        ainsi que les tests.
+      </p>
+    </section>
+
+    <!-- 2. Ressources fournies -->
+    <section id="ressources" class="carte">
+      <h2>Les ressources fournies et ce que j'ai dû faire</h2>
+      <p>On ne partait pas de zéro. Voici ce que le projet nous a donné :</p>
+      <ul>
+        <li>
+          <strong>Le code de départ</strong> : un dépôt GitHub d'un autre développeur (alexandreMesle/personnel), que j'ai
+          forké dans mon compte pour travailler dessus.
+        </li>
+        <li>
+          <strong>Une bibliothèque de menus</strong> pour la ligne de commande (CommandLineMenus 2.0), qui gère les écrans,
+          les options et les listes.
+        </li>
+        <li>
+          <strong>Un MCD et un script SQL</strong>, réalisés par un camarade du groupe (voir la section MCD).
+        </li>
+        <li>
+          <strong>Les consignes et grilles d'évaluation</strong> sur Moodle : arbre heuristique, tests unitaires, Git.
+        </li>
+      </ul>
+      <div class="encadre">
+        <strong>Ce que j'ai dû faire :</strong> comprendre le code existant avant de le modifier, puis ajouter
+        les fonctions manquantes (changer l'administrateur, saisir les dates), écrire les tests, documenter les menus
+        et publier le tout avec Git.
+      </div>
+    </section>
+
+    <!-- 3. Ce que j'ai fait -->
+    <section id="realise" class="carte">
+      <h2>Ce que j'ai fait</h2>
+
+      <h3>Première partie : les tests et la documentation</h3>
+      <ul>
+        <li>
+          <strong>Arbre heuristique</strong> : un schéma de tous les menus et options, avec une couleur différente
+          pour les menus, les options et les listes (voir la section arbre).
+        </li>
+        <li>
+          <strong>Tests unitaires JUnit 5</strong> : les setters (nom, prénom, mail, mot de passe), la suppression d'un
+          employé et d'une ligue, le changement d'administrateur. J'ai aussi ajouté un test pour la remarque du professeur :
+          <em>« et l'ancien administrateur ? »</em>. Quand on change d'administrateur, l'ancien perd bien ses droits.
+        </li>
+        <li>
+          <strong>Bugs documentés</strong> : trois tests sont désactivés avec <code>@Disabled</code>, car ils
+          révèlent des bugs réels. Par exemple, renommer un employé après l'avoir ajouté casse sa suppression.
+          Plutôt que de cacher ces bugs, je les ai laissés visibles et expliqués.
+        </li>
+      </ul>
+
+      <h3>Deuxième partie : les nouvelles fonctions en ligne de commande</h3>
+      <ul>
+        <li>
+          <strong>Changer l'administrateur d'une ligue</strong> : dans le menu d'une ligue, l'option
+          <code>c : Changer d'administrateur</code> affiche les employés de la ligue. Si l'employé choisi n'appartient
+          pas à cette ligue, un message d'erreur s'affiche au lieu de faire planter le programme.
+        </li>
+        <li>
+          <strong>Saisir les dates d'arrivée et de départ</strong> : dans le menu d'un employé, l'option
+          <code>d : Changer les dates</code> demande les dates au format <code>jj/mm/aaaa</code>. Une date impossible
+          comme le 31/02 est refusée. Une date de départ vide signifie « aucune ».
+        </li>
+        <li>
+          <strong>Tests des dates</strong> : quatre tests vérifient qu'une date de départ avant l'arrivée est refusée,
+          qu'une arrivée est obligatoire, et qu'un départ vide est accepté.
+        </li>
+      </ul>
+
+      <p>La règle qui protège les dates tient en quelques lignes :</p>
+      <pre><code>public void setDates(LocalDate arrivee, LocalDate depart)
+{
+    if (arrivee == null)
+        throw new IllegalArgumentException("la date d'arrivée est obligatoire.");
+    if (depart != null &amp;&amp; depart.isBefore(arrivee))
+        throw new IllegalArgumentException("la date de départ ne peut pas être avant la date d'arrivée.");
+    this.dateArrivee = arrivee;
+    this.dateDepart = depart;
+}</code></pre>
+      <p>
+        Le programme ne garde donc jamais une combinaison incohérente. Le menu attrape l'erreur et l'affiche à l'utilisateur.
+      </p>
+    </section>
+
+    <!-- 4. MCD -->
+    <section id="mcd" class="carte">
+      <h2>Modèle conceptuel de données (MCD)</h2>
+      <figure>
+        <img src="../images/mcd-personnel.png" alt="MCD : la table LIGUE (id_ligue, nom) est liée à EMPLOYE (id_employe, prenom, nom, email) par APPARTENIR ; EMPLOYE est lié à UTILISATEUR (id_utilisateur, identifiant, role, mot_de_passe) par POSSEDER." width="1290" height="620" loading="lazy">
+        <figcaption>MCD du projet, réalisé par un camarade du groupe (notation Merise).</figcaption>
+      </figure>
+      <h3>Lire le MCD</h3>
+      <ul>
+        <li><strong>Une ligue</strong> regroupe <strong>0 à n</strong> employés, et chaque employé appartient à <strong>1 seule</strong> ligue (APPARTENIR).</li>
+        <li><strong>Un employé</strong> possède <strong>0 ou 1</strong> compte utilisateur, et un compte correspond à <strong>0 ou 1</strong> employé (POSSEDER).</li>
+      </ul>
+      <div class="encadre">
+        <strong>Point à améliorer :</strong> le MCD ne contient pas encore les dates d'arrivée et de départ, ajoutées ensuite
+        dans le programme. Si la base de données est utilisée, il faudra ajouter ces deux attributs à EMPLOYE.
+      </div>
+    </section>
+
+    <!-- 5. Captures d'écran -->
+    <section id="captures" class="carte">
+      <h2>Captures d'écran</h2>
+      <p>Les captures ci-dessous montrent la sortie réelle du programme et des tests lors de mon dernier passage.</p>
+
+      <figure>
+        <img src="../images/console-admin.png" alt="Console : changement de l'administrateur de la ligue Football, qui devient Bouchard Gerard." width="1800" height="834" loading="lazy">
+        <figcaption>Changer l'administrateur d'une ligue : Bouchard Gérard devient administrateur de Football.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="../images/console-dates.png" alt="Console : saisie des dates d'un employé, avec les messages d'erreur pour une date de départ avant l'arrivée et pour un format invalide, puis l'enregistrement." width="1800" height="1008" loading="lazy">
+        <figcaption>Saisie des dates : erreurs refusées (ordre, format), puis dates enregistrées et affichées.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="../images/junit-tests.png" alt="Résultats des tests JUnit : 26 tests trouvés, 23 réussis, 3 désactivés, 0 échec." width="1800" height="2184" loading="lazy">
+        <figcaption>Résultats des tests unitaires : 26 tests trouvés, 23 réussis, 3 désactivés (bugs documentés), 0 échec.</figcaption>
+      </figure>
+    </section>
+
+    <!-- 6. Arbre heuristique -->
+    <section id="arbre" class="carte">
+      <h2>Arbre heuristique des menus</h2>
+      <p>
+        L'arbre montre comment on passe d'un écran à l'autre. Les menus sont en bleu, les options en vert,
+        les listes de choix en orange, et les retours (« Back ») en gris.
+      </p>
+      <figure>
+        <img src="../images/arbre-heuristique.png" alt="Arbre des menus : menu principal, gestion des ligues, édition d'une ligue (avec changer d'administrateur), gestion des employés, gestion d'un compte employé (avec changer les dates)." width="2768" height="1478" loading="lazy">
+        <figcaption>Arbre des menus à jour pour la partie Personnel 2.</figcaption>
+      </figure>
+    </section>
+
+    <!-- 7. Liens : code source et documentation -->
+    <section id="liens" class="carte">
+      <h2>Liens</h2>
+      <h3>Code source</h3>
+      <ul>
+        <li><a href="https://github.com/Rival99900/m2l-personnel" target="_blank" rel="noopener">Dépôt GitHub du projet (m2l-personnel)</a></li>
+        <li><a href="https://github.com/Rival99900/m2l-personnel/blob/master/Personnel/docs/arbre_heuristique.md" target="_blank" rel="noopener">Arbre des menus en Mermaid (fichier docs/arbre_heuristique.md)</a></li>
+      </ul>
+      <h3>Documentation utilisée</h3>
+      <ul>
+        <li><a href="https://junit.org/junit5/docs/current/user-guide/" target="_blank" rel="noopener">JUnit 5 : guide d'utilisation</a> (écrire et lancer les tests)</li>
+        <li><a href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html" target="_blank" rel="noopener">Java : LocalDate</a> (les dates sans heure)</li>
+        <li><a href="https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html" target="_blank" rel="noopener">Java : DateTimeFormatter</a> (le format jj/mm/aaaa)</li>
+        <li><a href="https://mermaid.js.org/syntax/flowchart.html" target="_blank" rel="noopener">Mermaid : diagrammes de flux</a> (l'arbre des menus)</li>
+      </ul>
+    </section>
+
+    <!-- 8. Bilan -->
+    <section id="bilan" class="carte">
+      <h2>Bilan</h2>
+      <p>
+        Le plus utile a été les tests. Les consignes Moodle le rappellent : que le programme fonctionne ne suffit pas
+        comme critère de qualité.
+        Les trois tests désactivés m'ont montré des cas que je n'avais pas imaginés en écrivant le code.
+      </p>
+      <p>
+        Côté Git, j'ai appris à versionner mes changements et à rendre le travail lisible pour mes camarades,
+        car l'évaluation de chacun se voit dans les commits.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Albert – <a href="../index.html">Retour au portfolio</a></p>
+  </footer>
+
+</body>
+</html>

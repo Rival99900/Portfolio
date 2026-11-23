@@ -2,266 +2,360 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio d'Albert, étudiant en BTS SIO : présentation, projets, veille sur l'intelligence artificielle, stage chez Lovotech et épreuve E5.">
   <title>Albert – Portfolio BTS SIO</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="images/logo.png">
 </head>
 <body>
-  <header>
-    <h1>Bienvenue sur mon portfolio</h1>
+
+  <!-- En-tête : présentation rapide et boutons principaux -->
+  <header class="hero">
+    <div class="hero-contenu">
+      <p class="etiquette">BTS SIO · option SLAM · 2<sup>e</sup> année</p>
+      <h1>Bonjour, je suis Albert</h1>
+      <p class="accroche">
+        Étudiant en développement d'applications et bases de données. J'aime construire des outils utiles,
+        bien les documenter, et comprendre comment l'intelligence artificielle change le métier.
+      </p>
+      <div class="boutons">
+        <a class="btn" href="pages/projet-personnel.html">Voir mon projet M2L</a>
+        <a class="btn btn-secondaire" href="documents/cv.pdf" target="_blank" rel="noopener">Mon CV (PDF)</a>
+      </div>
+      <ul class="tags" aria-label="Technologies utilisées">
+        <li>Java</li>
+        <li>Python</li>
+        <li>Node.js</li>
+        <li>HTML / CSS</li>
+        <li>SQL</li>
+        <li>Git / GitHub</li>
+      </ul>
+    </div>
   </header>
 
-  <section id="presentation">
-  <h2>Présentation</h2>
-  <p>Je m'appelle Albert, étudiant en BTS SIO. 
-     J'ai choisi ce BTS pour approfondir mes connaissances en programmation, 
-     développement web et bases de données.</p>
-  <h3>Compétences individuelles</h3>
-  <ul>
-    <li>Maîtrise des bases en HTML et CSS</li>
-    <li>Développement d’un bot Discord en Node.js avec discord.js avec plus de 50 commandes (modération, utilitaires, fun).</li>
-    <li>Apprentissage de Python (manipulation de chaînes, ASCII)</li>
-    <li>Organisation de projets avec GitHub et GitHub Pages</li>
-    <li>Rédaction de documentation claire (README, synthèses)</li>
-  </ul>
-</section>
+  <!-- Menu de navigation (reste visible en défilant) -->
+  <nav class="menu" aria-label="Sections du site">
+    <ul>
+      <li><a href="#presentation">Présentation</a></li>
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#cv">CV</a></li>
+      <li><a href="#veille">Veille IA</a></li>
+      <li><a href="#e5">Épreuve E5</a></li>
+      <li><a href="#stage">Stage Lovotech</a></li>
+      <li><a href="#bilan">Bilan</a></li>
+    </ul>
+  </nav>
 
-  <section id="cv">
-    <h2>Mon CV</h2>
-    <p>
-  <a href="cv.pdf" target="_blank" class="btn-download">🔎 Voir mon CV</a>
-  <a href="cv.pdf" download="Albert_CV.pdf" class="btn-download">📄 Télécharger</a>
-    </p>
-  </section>
+  <main class="conteneur">
 
-  <section id="veille">
-  <h2>Veille Technologique</h2>
+    <!-- Présentation et compétences -->
+    <section id="presentation" class="carte">
+      <h2>Présentation</h2>
+      <p>
+        Je m'appelle Albert, étudiant en BTS SIO. J'ai choisi ce BTS pour approfondir mes connaissances
+        en programmation, en développement web et en bases de données.
+      </p>
+      <h3>Mes compétences</h3>
+      <div class="grille">
+        <article class="carte-mini">
+          <h4>Programmation</h4>
+          <p>Java, Python et JavaScript. Bases solides en HTML et CSS.</p>
+        </article>
+        <article class="carte-mini">
+          <h4>Bases de données</h4>
+          <p>Modélisation avec un MCD, scripts SQL, tables et relations entre elles.</p>
+        </article>
+        <article class="carte-mini">
+          <h4>Bot Discord</h4>
+          <p>Plus de 50 commandes (modération, utilitaires, fun) avec Node.js et discord.js.</p>
+        </article>
+        <article class="carte-mini">
+          <h4>Outils et méthode</h4>
+          <p>Git, GitHub et GitHub Pages pour versionner et publier mes projets. Organisation en mode projet.</p>
+        </article>
+        <article class="carte-mini">
+          <h4>Documentation</h4>
+          <p>Des README et des synthèses claires, pour qu'un autre développeur comprenne vite.</p>
+        </article>
+      </div>
+    </section>
 
-    <h3>Définition</h3>
-  <p>
-    La <strong>veille technologique</strong> désigne l’ensemble des activités de recherche, de collecte,
-    d’analyse et de diffusion d’informations relatives aux innovations et évolutions dans un domaine
-    spécifique. Elle permet d’anticiper les changements, de suivre les tendances du marché et d’adapter
-    ses compétences ou ses projets en conséquence. Dans le cadre du BTS SIO, elle constitue un outil
-    essentiel pour rester informé des nouvelles pratiques et technologies du numérique.
-  </p>
+    <!-- Projets -->
+    <section id="projets" class="carte">
+      <h2>Projets</h2>
+      <div class="grille">
+        <article class="carte-mini">
+          <span class="badge">Projet BTS</span>
+          <h3>Gestion du personnel des ligues (M2L)</h3>
+          <p>
+            Application Java en ligne de commande : ligues, employés, administrateurs, dates d'arrivée et de départ.
+            Réalisée en groupe, versionnée avec Git, avec des tests unitaires JUnit.
+          </p>
+          <a class="btn btn-secondaire" href="pages/projet-personnel.html">Découvrir le projet</a>
+        </article>
+        <article class="carte-mini">
+          <span class="badge">Projet perso</span>
+          <h3>Éditeur de sauvegardes Bloodborne</h3>
+          <p>
+            Éditeur de sauvegardes du jeu en React, Vite et Tauri (Rust) : objets, gemmes, personnage et pont FTP PS4/PS5.
+            Publié sur GitHub avec des versions téléchargeables.
+          </p>
+          <a class="btn btn-secondaire" href="pages/projet-bloodborne.html">Découvrir le projet</a>
+        </article>
+        <article class="carte-mini">
+          <span class="badge">Projet perso</span>
+          <h3>Bot Discord</h3>
+          <p>
+            Bot de modération et d'utilitaires en Node.js avec discord.js. Les tokens sont gardés
+            dans des variables d'environnement.
+          </p>
+        </article>
+        <article class="carte-mini">
+          <span class="badge">Stage</span>
+          <h3>Chatbot pour Lovotech</h3>
+          <p>
+            Un chatbot en Python qui répond à des questions sur près de 3 000 factures.
+            Détails dans la section <a href="#stage">stage</a>.
+          </p>
+        </article>
+      </div>
+    </section>
 
-  <h3>Introduction</h3>
-  <p>
-    En tant qu’étudiant en BTS SIO, passionné par le développement web et les technologies du numérique,
-    j’ai choisi de centrer ma veille technologique sur le thème des <strong>frameworks JavaScript</strong>.
-    Ce sujet m’intéresse particulièrement car il est directement lié à mon futur métier de développeur
-    et à mes compétences en HTML, CSS et JavaScript. Comprendre les évolutions des outils comme
-    <em>React</em>, <em>Vue.js</em> ou <em>Angular</em> me permet d’anticiper les attentes du marché
-    et de mieux orienter mes apprentissages.
-  </p>
+    <!-- CV -->
+    <section id="cv" class="carte">
+      <h2>Mon CV</h2>
+      <p>Mon parcours, mes expériences et mes compétences techniques.</p>
+      <div class="boutons">
+        <a class="btn" href="documents/cv.pdf" target="_blank" rel="noopener">Voir mon CV</a>
+        <a class="btn btn-secondaire" href="documents/cv.pdf" download="Albert_CV.pdf">Télécharger</a>
+      </div>
+    </section>
 
-  <h3>Outils de veille utilisés</h3>
-  <ul>
-    <li>Google Alerts (mots-clés : “framework JavaScript”, “React”, “Vue.js”, “Angular”)</li>
-    <li>Sites spécialisés : OpenClassrooms, MDN Web Docs, Journal du Net</li>
-    <li>Communautés : GitHub, Stack Overflow</li>
-    <li>Documentation officielle des frameworks</li>
-  </ul>
+    <!-- Veille technologique : IA -->
+    <section id="veille" class="carte">
+      <h2>Veille technologique : l'intelligence artificielle</h2>
 
-    <h3>Méthodes</h3>
-  <ul>
-    <li>Analyse régulière des tendances via Google Trends et rapports du marché</li>
-    <li>Lecture hebdomadaire d’articles et tutoriels sur les sites spécialisés</li>
-    <li>Participation active aux forums et communautés (GitHub, Stack Overflow)</li>
-    <li>Suivi des mises à jour officielles des frameworks (changelog, release notes)</li>
-    <li>Comparaison des frameworks à travers des projets pratiques et tests de performance</li>
-  </ul>
+      <h3>C'est quoi, la veille ?</h3>
+      <p>
+        La <strong>veille technologique</strong>, c'est suivre régulièrement ce qui change dans son domaine :
+        chercher, trier, comprendre et partager les informations utiles. En BTS SIO, elle sert à savoir
+        quelles technologies apprendre et à rester à jour.
+      </p>
 
-  <h3>Ressources intégrées</h3>
-  <ul>
-    <li><a href="https://react.dev/">Documentation officielle de React</a></li>
-    <li><a href="https://vuejs.org/">Documentation officielle de Vue.js</a></li>
-    <li><a href="https://angular.io/">Documentation officielle de Angular</a></li>
-    <li><a href="https://developer.mozilla.org/fr/">MDN Web Docs – Référence JavaScript</a></li>
-  </ul>
-</section>
+      <h3>Pourquoi l'IA ?</h3>
+      <p>
+        L'IA générative est partout : chatbots, assistants de code, analyse de documents. Elle touche aussi
+        la sécurité, la réglementation et le métier d'informaticien. Je la suis de près, et je la teste moi-même.
+      </p>
 
-  <section id="e5">
-  <h2>Épreuve orale E5 – Parcours de professionnalisation</h2>
+      <h3>Mes entraînements en IA</h3>
+      <p>
+        <strong>Entraîner un modèle</strong>, c'est lui montrer beaucoup d'exemples dont on connaît la bonne réponse,
+        puis mesurer son résultat sur des exemples qu'il n'a jamais vus. Pendant mon stage chez Lovotech, j'ai fait ça :
+      </p>
+      <ul>
+        <li>
+          <strong>Détection d'intention :</strong> le chatbot devait deviner ce que voulait la personne. Le texte est
+          transformé en nombres (TF-IDF), puis un modèle de régression logistique (scikit-learn) choisit l'intention.
+        </li>
+        <li><strong>Comparaison de trois modèles d'IA</strong> pour l'interface web du chatbot.</li>
+        <li>
+          <strong>Lecture d'images en local :</strong> une facture photographiée est lue par EasyOCR, sans être envoyée
+          à un service extérieur.
+        </li>
+        <li><strong>Saisie vocale :</strong> on peut poser sa question à la voix.</li>
+      </ul>
+      <div class="encadre">
+        <strong>Ce que j'en retiens :</strong> un modèle n'est jamais meilleur que ses données. Les libellés mal rédigés
+        dans l'Excel faisaient se tromper le chatbot : il a fallu nettoyer les données avant de toucher au modèle.
+      </div>
 
-  <h3>Présentation</h3>
-  <p>
-    L’épreuve orale E5 du BTS SIO est une épreuve orale qui permet de valoriser les compétences professionnelles 
-    acquises durant la formation. Elle s’appuie sur les stages, les projets réalisés et les missions individuelles.
-  </p>
+      <h3>Les tendances de l'IA en 2026</h3>
+      <div class="grille">
+        <article class="carte-mini">
+          <h4>1. Des agents qui agissent seuls</h4>
+          <p>
+            On passe des chatbots qui répondent aux <strong>agents</strong>, qui enchaînent des étapes : consulter un outil,
+            faire une action, vérifier le résultat. Plusieurs articles de début 2026 parlent d'une
+            « ère de l'industrialisation et des agents autonomes ». Ce sont surtout des tendances et des démonstrations.
+          </p>
+        </article>
+        <article class="carte-mini">
+          <h4>2. Les petits modèles</h4>
+          <p>
+            Des versions <strong>allégées</strong> des IA, conçues pour tourner sur des appareils peu puissants et coûter
+            moins cher. Elles attirent l'attention en Europe, notamment pour une IA plus locale et plus sobre.
+          </p>
+        </article>
+        <article class="carte-mini">
+          <h4>3. Les modèles du monde</h4>
+          <p>
+            Des IA qui apprennent à partir de vidéos et de simulations pour prédire l'évolution du monde, et pas seulement
+            le mot suivant. Utiles pour la robotique et les jeux vidéo. C'est une <em>prévision</em> : le domaine
+            en est encore au début.
+          </p>
+        </article>
+        <article class="carte-mini">
+          <h4>4. La régulation</h4>
+          <p>
+            L'<strong>AI Act</strong> européen s'applique depuis le 2 août 2026. Les règles pour les systèmes à haut risque
+            (annexe III) sont reportées au 2 décembre 2027. Une nouvelle interdiction s'ajoute le 2 décembre 2026
+            (contenus d'abus sexuels sur mineurs et contenus intimes non consentis générés par IA).
+          </p>
+        </article>
+      </div>
 
-  <h3>Objectifs</h3>
-  <ul>
-    <li>Présenter son parcours professionnel</li>
-    <li>Mettre en avant les compétences du référentiel</li>
-    <li>Argumenter et valoriser ses réalisations</li>
-  </ul>
+      <h3>L'actu de novembre 2026</h3>
+      <ul>
+        <li>
+          <strong>Qwen4-Max (Alibaba) :</strong> le modèle serait plus performant que le précédent, tout en consommant 35 % de tokens
+          en moins. Ces chiffres viennent d'Alibaba, sans évaluation indépendante pour l'instant.
+        </li>
+        <li>
+          <strong>Agents vocaux au Royaume-Uni :</strong> le gouvernement britannique a confié ses agents vocaux à ElevenLabs,
+          pour un contrat pouvant atteindre 10,8 millions de livres.
+        </li>
+        <li>
+          <strong>Abus sur mineurs générés par IA :</strong> les signalements transmis au NCMEC américain sont passés d'environ
+          4 700 en 2023 à plus de 400 000 en 2025. Une meilleure détection explique en partie cette hausse. C'est un sujet
+          de sécurité et de régulation.
+        </li>
+      </ul>
 
-  <h3>Compétences évaluées</h3>
-  <table border="1" cellpadding="8" cellspacing="0">
-    <thead>
-      <tr>
-        <th>Domaine</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Gérer le patrimoine informatique</td>
-        <td>Installer, configurer, maintenir des équipements et logiciels</td>
-      </tr>
-      <tr>
-        <td>Répondre aux incidents et demandes</td>
-        <td>Diagnostiquer, résoudre, documenter les problèmes</td>
-      </tr>
-      <tr>
-        <td>Développer la présence en ligne</td>
-        <td>Créer et maintenir des sites web, gérer les contenus</td>
-      </tr>
-      <tr>
-        <td>Travailler en mode projet</td>
-        <td>Participer à la gestion de projet, respecter les délais</td>
-      </tr>
-      <tr>
-        <td>Mettre en place des services réseau</td>
-        <td>Configurer des services (serveurs, accès distant, sécurité)</td>
-      </tr>
-      <tr>
-        <td>Développer des applications</td>
-        <td>Concevoir, coder, tester et documenter des applications</td>
-      </tr>
-      <tr>
-        <td>Assurer la cybersécurité</td>
-        <td>Appliquer les bonnes pratiques de sécurité</td>
-      </tr>
-    </tbody>
-  </table>
+      <h3>Comment je fais ma veille</h3>
+      <ul>
+        <li>Une lecture de veille IA chaque semaine (actualités des sites spécialisés).</li>
+        <li>La documentation officielle quand une règle change (comme l'AI Act).</li>
+      </ul>
 
-  <h3>Tableau de synthèse personnel</h3>
-  <table border="1" cellpadding="8" cellspacing="0">
-    <thead>
-      <tr>
-        <th>Activité réalisée</th>
-        <th>Compétence mobilisée</th>
-        <th>Contexte / Outil</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Création d’un portfolio en HTML/CSS</td>
-        <td>Développer la présence en ligne</td>
-        <td>GitHub Pages, VS Code</td>
-      </tr>
-      <tr>
-        <td>Bot Discord avec plus de 50 commandes (modération, fun, utilitaires)</td>
-        <td>Concevoir et maintenir un bot Discord, structurer les commandes, sécuriser l’accès (tokens)</td>
-        <td>Node.js/discord.js, VS Code, Git, gestion des tokens (variables d’environnement)</td>
-      </tr>
-      <tr>
-        <td>Organisation de projet sur GitHub</td>
-        <td>Travailler en mode projet</td>
-        <td>Git, README</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
+      <p class="sources-liste"><strong>Sources :</strong></p>
+      <ul class="sources-liste">
+        <li><a href="https://fpf.org/blog/the-ai-act-implementation-timeline-what-changes-under-the-ai-omnibus" target="_blank" rel="noopener">Future of Privacy Forum : calendrier de l'AI Act après l'AI Omnibus</a></li>
+        <li><a href="https://www.actuia.com/veille/2026-11-16/" target="_blank" rel="noopener">actuia.com : veille IA du 16 novembre 2026</a></li>
+        <li><a href="https://dev.to/ndabene/ai-q1-2026-towards-the-era-of-industrialization-and-autonomous-agents-9nb" target="_blank" rel="noopener">DEV Community : AI Q1 2026, vers l'ère des agents autonomes</a></li>
+        <li><a href="https://fr.euronews.com/2026/01/01/de-ai-slop-aux-modeles-du-monde-bulles-et-petits-modeles-ce-que-lia-nous-reserve-en-2026" target="_blank" rel="noopener">Euronews : ce que l'IA nous réserve en 2026</a></li>
+      </ul>
+    </section>
 
-  <section id="stage">
-  <h2>Stage de première année chez Lovotech (chatbot IA)</h2>
+    <!-- Épreuve E5 -->
+    <section id="e5" class="carte">
+      <h2>Épreuve orale E5 – Parcours de professionnalisation</h2>
 
-  <h3>Contexte et mission</h3>
-  <p>
-    J’ai fait mon stage de première année chez Lovotech, en mai et juin 2026. L’entreprise garde
-    près de 3 000 factures dans un seul fichier Excel, et y retrouver une information demandait du
-    temps. On m’a confié la construction d’un chatbot qui répond à des questions sur ces factures,
-    en langage courant. J’ai tout écrit en Python, sans base de données : le fichier est chargé en
-    mémoire avec pandas, ce qui suffisait pour ce volume et m’évitait de monter un serveur SQL pour rien.
-  </p>
+      <h3>Présentation</h3>
+      <p>
+        L'épreuve orale E5 du BTS SIO valorise les compétences professionnelles acquises pendant la formation.
+        Elle s'appuie sur les stages, les projets réalisés et les missions individuelles.
+      </p>
 
-  <h3>Réalisations (support de présentation)</h3>
-  <table border="1" cellpadding="8" cellspacing="0">
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Réalisation</th>
-        <th>Compétences mobilisées</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>16/05/2026</td>
-        <td>Étude de Python et de ses bibliothèques (pandas, scikit-learn, Flask, EasyOCR)</td>
-        <td>Organiser son développement professionnel</td>
-      </tr>
-      <tr>
-        <td>16/05/2026</td>
-        <td>Étude de l’existant et définition de la problématique</td>
-        <td>Travailler en mode projet ; organiser son développement</td>
-      </tr>
-      <tr>
-        <td>23/05/2026</td>
-        <td>Choix de la méthode Kanban et architecture sans base de données</td>
-        <td>Gérer le patrimoine informatique ; travailler en mode projet</td>
-      </tr>
-      <tr>
-        <td>23/05/2026</td>
-        <td>Chargement du fichier Excel de 3 000 factures en mémoire (pandas)</td>
-        <td>Gérer le patrimoine informatique</td>
-      </tr>
-      <tr>
-        <td>30/05/2026</td>
-        <td>Détection d’intention (TF-IDF + régression logistique) et 10 fonctions métier</td>
-        <td>Répondre aux demandes ; mode projet ; mettre à disposition un service</td>
-      </tr>
-      <tr>
-        <td>30/05/2026</td>
-        <td>Interface web du chatbot et comparaison de trois modèles d’IA</td>
-        <td>Développer la présence en ligne ; travailler en mode projet</td>
-      </tr>
-      <tr>
-        <td>12/06/2026</td>
-        <td>Saisie vocale, lecture d’images (OCR local) et livraison du chatbot</td>
-        <td>Gérer le patrimoine ; répondre aux demandes ; mettre à disposition un service</td>
-      </tr>
-    </tbody>
-  </table>
+      <h3>Objectifs</h3>
+      <ul>
+        <li>Présenter son parcours professionnel</li>
+        <li>Mettre en avant les compétences du référentiel</li>
+        <li>Argumenter et valoriser ses réalisations</li>
+      </ul>
 
-  <h3>Ce que j’en retiens</h3>
-  <p>
-    Le chatbot comprend la demande grâce à un petit modèle d’intention (TF-IDF puis régression
-    logistique avec scikit-learn). Il lit aussi une facture photographiée, avec EasyOCR en local,
-    sans envoyer l’image vers un service extérieur, et il accepte la voix. Le plus dur n’a pas été
-    le code. Un Excel rempli à la main est plein de trous et de formats incohérents : tant que je ne
-    nettoyais pas les libellés en amont, le modèle se trompait de fonction.
-  </p>
+      <h3>Compétences évaluées</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Domaine</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Gérer le patrimoine informatique</td><td>Installer, configurer, maintenir des équipements et logiciels</td></tr>
+            <tr><td>Répondre aux incidents et demandes</td><td>Diagnostiquer, résoudre, documenter les problèmes</td></tr>
+            <tr><td>Développer la présence en ligne</td><td>Créer et maintenir des sites web, gérer les contenus</td></tr>
+            <tr><td>Travailler en mode projet</td><td>Participer à la gestion de projet, respecter les délais</td></tr>
+            <tr><td>Mettre en place des services réseau</td><td>Configurer des services (serveurs, accès distant, sécurité)</td></tr>
+            <tr><td>Développer des applications</td><td>Concevoir, coder, tester et documenter des applications</td></tr>
+            <tr><td>Assurer la cybersécurité</td><td>Appliquer les bonnes pratiques de sécurité</td></tr>
+          </tbody>
+        </table>
+      </div>
 
-  <h3>Documents et documentation</h3>
-  <p>
-    <a href="Tableau_Synthese_E5_BTS_SIO_Lovotech.pdf" target="_blank" class="btn-download">🔎 Voir le tableau de synthèse E5 (PDF)</a>
-    <a href="Tableau_Synthese_E5_BTS_SIO_Lovotech.pdf" download class="btn-download">📄 Télécharger le tableau E5</a>
-  </p>
-  <p>Si le jury veut entrer dans le détail, voici la documentation des outils utilisés :</p>
-  <ul>
-    <li><a href="https://pandas.pydata.org/docs/" target="_blank">pandas</a> : lecture et manipulation du fichier Excel</li>
-    <li><a href="https://scikit-learn.org/stable/" target="_blank">scikit-learn</a> : TF-IDF et régression logistique pour la détection d’intention</li>
-    <li><a href="https://flask.palletsprojects.com/" target="_blank">Flask</a> : interface web du chatbot</li>
-    <li><a href="https://www.jaided.ai/easyocr/" target="_blank">EasyOCR</a> : lecture des factures en images, en local</li>
-  </ul>
-</section>
+      <h3>Tableau de synthèse personnel</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Activité réalisée</th><th>Compétence mobilisée</th><th>Contexte / Outil</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Création d'un portfolio en HTML/CSS</td><td>Développer la présence en ligne</td><td>GitHub Pages, VS Code</td></tr>
+            <tr><td>Bot Discord avec plus de 50 commandes (modération, fun, utilitaires)</td><td>Concevoir et maintenir un bot Discord, structurer les commandes, sécuriser l'accès (tokens)</td><td>Node.js/discord.js, VS Code, Git, gestion des tokens (variables d'environnement)</td></tr>
+            <tr><td>Organisation de projet sur GitHub</td><td>Travailler en mode projet</td><td>Git, README</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-  <section id="bilan">
-  <h2>Bilan</h2>
-  <p>
-    Cette mission m’a permis de renforcer mes compétences individuelles en développement web et en organisation de projet.
-    J’ai appris à structurer un portfolio, à intégrer des ressources de veille technologique et à valoriser mes acquis
-    en lien avec l’épreuve E5. Ce travail m’aide à mieux comprendre les attentes du BTS SIO et à préparer mon futur métier
-    de développeur.
-  </p>
-</section>
+    <!-- Stage Lovotech -->
+    <section id="stage" class="carte">
+      <h2>Stage de première année chez Lovotech (chatbot IA)</h2>
+
+      <h3>Contexte et mission</h3>
+      <p>
+        J'ai fait mon stage de première année chez Lovotech, en mai et juin 2026. L'entreprise garde près de 3 000 factures
+        dans un seul fichier Excel, et y retrouver une information demandait du temps. On m'a confié la construction d'un
+        chatbot qui répond à des questions sur ces factures, en langage courant. J'ai tout écrit en Python, sans base de données :
+        le fichier est chargé en mémoire avec pandas, ce qui suffisait pour ce volume et m'évitait de monter un serveur SQL pour rien.
+      </p>
+
+      <h3>Réalisations (support de présentation)</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Date</th><th>Réalisation</th><th>Compétences mobilisées</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>16/05/2026</td><td>Étude de Python et de ses bibliothèques (pandas, scikit-learn, Flask, EasyOCR)</td><td>Organiser son développement professionnel</td></tr>
+            <tr><td>16/05/2026</td><td>Étude de l'existant et définition de la problématique</td><td>Travailler en mode projet ; organiser son développement</td></tr>
+            <tr><td>23/05/2026</td><td>Choix de la méthode Kanban et architecture sans base de données</td><td>Gérer le patrimoine informatique ; travailler en mode projet</td></tr>
+            <tr><td>23/05/2026</td><td>Chargement du fichier Excel de 3 000 factures en mémoire (pandas)</td><td>Gérer le patrimoine informatique</td></tr>
+            <tr><td>30/05/2026</td><td>Détection d'intention (TF-IDF + régression logistique) et 10 fonctions métier</td><td>Répondre aux demandes ; mode projet ; mettre à disposition un service</td></tr>
+            <tr><td>30/05/2026</td><td>Interface web du chatbot et comparaison de trois modèles d'IA</td><td>Développer la présence en ligne ; travailler en mode projet</td></tr>
+            <tr><td>12/06/2026</td><td>Saisie vocale, lecture d'images (OCR local) et livraison du chatbot</td><td>Gérer le patrimoine ; répondre aux demandes ; mettre à disposition un service</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Ce que j'en retiens</h3>
+      <p>
+        Le chatbot comprend la demande grâce à un petit modèle d'intention (TF-IDF puis régression logistique avec scikit-learn).
+        Il lit aussi une facture photographiée, avec EasyOCR en local, sans envoyer l'image vers un service extérieur, et il accepte la voix.
+        Le plus dur n'a pas été le code. Un Excel rempli à la main est plein de trous et de formats incohérents : tant que je ne nettoyais
+        pas les libellés en amont, le modèle se trompait de fonction.
+      </p>
+
+      <h3>Documents et documentation</h3>
+      <div class="boutons">
+        <a class="btn" href="documents/Tableau_Synthese_E5_BTS_SIO_Lovotech.pdf" target="_blank" rel="noopener">Voir le tableau de synthèse E5 (PDF)</a>
+        <a class="btn btn-secondaire" href="documents/Tableau_Synthese_E5_BTS_SIO_Lovotech.pdf" download>Télécharger le tableau E5</a>
+      </div>
+      <p>Si le jury veut entrer dans le détail, voici la documentation des outils utilisés :</p>
+      <ul>
+        <li><a href="https://pandas.pydata.org/docs/" target="_blank" rel="noopener">pandas</a> : lecture et manipulation du fichier Excel</li>
+        <li><a href="https://scikit-learn.org/stable/" target="_blank" rel="noopener">scikit-learn</a> : TF-IDF et régression logistique pour la détection d'intention</li>
+        <li><a href="https://flask.palletsprojects.com/" target="_blank" rel="noopener">Flask</a> : interface web du chatbot</li>
+        <li><a href="https://www.jaided.ai/easyocr/" target="_blank" rel="noopener">EasyOCR</a> : lecture des factures en images, en local</li>
+      </ul>
+    </section>
+
+    <!-- Bilan -->
+    <section id="bilan" class="carte">
+      <h2>Bilan</h2>
+      <p>
+        Cette mission m'a permis de renforcer mes compétences en développement web et en organisation de projet.
+        J'ai appris à structurer un portfolio, à intégrer des ressources de veille technologique et à valoriser mes acquis
+        en lien avec l'épreuve E5. Ce travail m'aide à mieux comprendre les attentes du BTS SIO et à préparer mon futur métier
+        de développeur.
+      </p>
+    </section>
+
+  </main>
 
   <footer>
-    <p>© 2025 Albert - Portfolio BTS SIO</p>
+    <p>© 2026 Albert – Portfolio BTS SIO · <a href="https://github.com/Rival99900/Portfolio" target="_blank" rel="noopener">Code source sur GitHub</a></p>
   </footer>
+
 </body>
 </html>

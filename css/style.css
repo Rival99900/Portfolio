@@ -1,0 +1,325 @@
+/* =========================================================
+   Portfolio BTS SIO – feuille de style
+   Organisation :
+   1. Variables de couleurs (un seul endroit à modifier)
+   2. Mise en page générale
+   3. En-tête, menu, sections (cartes)
+   4. Composants : boutons, tableaux, images, encadrés
+   5. Adaptation aux petits écrans (téléphone)
+   ========================================================= */
+
+/* 1. Variables : on les utilise partout avec var(--nom) */
+:root {
+  --bleu: #1d4ed8;          /* couleur principale (boutons, titres) */
+  --bleu-fonce: #1e3a8a;    /* titres, en-têtes de tableaux */
+  --turquoise: #0d9488;     /* couleur d'accent */
+  --fond: #f1f5f9;          /* fond de la page */
+  --carte: #ffffff;         /* fond des sections */
+  --texte: #0f172a;         /* texte principal */
+  --texte-doux: #475569;    /* texte secondaire */
+  --bordure: #e2e8f0;       /* lignes et bordures fines */
+  --rayon: 14px;            /* arrondi des cartes */
+  --ombre: 0 1px 3px rgba(15, 23, 42, 0.08), 0 4px 16px rgba(15, 23, 42, 0.04);
+}
+
+/* 2. Mise en page générale */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--texte);
+  background: var(--fond);
+}
+
+/* Largeur maximale du contenu, centré */
+.conteneur {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+a { color: var(--bleu); }
+a:focus-visible { outline: 3px solid var(--turquoise); outline-offset: 2px; border-radius: 4px; }
+
+/* 3a. En-tête (hero) avec dégradé */
+.hero {
+  background: linear-gradient(135deg, var(--bleu-fonce) 0%, var(--bleu) 60%, var(--turquoise) 100%);
+  color: #fff;
+  padding: 56px 16px 48px;
+}
+
+.hero-contenu { max-width: 980px; margin: 0 auto; }
+
+.etiquette {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.hero h1 {
+  margin: 0 0 12px;
+  font-size: 2.4rem;
+  line-height: 1.15;
+}
+
+.accroche {
+  max-width: 640px;
+  font-size: 1.1rem;
+  margin: 0 0 24px;
+  opacity: 0.95;
+}
+
+/* Liste de technologies sous forme de petites pastilles */
+.tags {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.tags li {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+/* 3b. Menu collant : reste en haut quand on descend dans la page */
+.menu {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 1px 0 var(--bordure);
+}
+.menu ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 10px 16px;
+  max-width: 980px;
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;          /* sur téléphone, on fait défiler le menu */
+  white-space: nowrap;
+}
+.menu a {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--texte-doux);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.menu a:hover { background: #e0e7ff; color: var(--bleu-fonce); }
+
+/* 3c. Sections = cartes blanches */
+.carte {
+  background: var(--carte);
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+  padding: 28px;
+  margin: 24px 0;
+  scroll-margin-top: 70px;   /* évite que le menu cache le titre */
+}
+
+.carte h2 {
+  color: var(--bleu-fonce);
+  font-size: 1.6rem;
+  margin: 0 0 16px;
+  padding-left: 12px;
+  border-left: 6px solid var(--turquoise);
+}
+
+.carte h3 {
+  color: var(--texte);
+  font-size: 1.15rem;
+  margin: 24px 0 8px;
+}
+
+.carte h4 {
+  margin: 0 0 6px;
+  color: var(--bleu-fonce);
+  font-size: 1.02rem;
+}
+
+.carte ul { padding-left: 22px; }
+.carte li { margin-bottom: 6px; }
+
+/* Grille de petites cartes (compétences, tendances, projets) */
+.grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.carte-mini {
+  background: #f8fafc;
+  border: 1px solid var(--bordure);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 0;
+}
+
+.carte-mini p { margin: 0 0 8px; }
+
+/* Petit badge au-dessus du titre d'un projet */
+.badge {
+  display: inline-block;
+  margin: 0 0 8px !important;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #0f766e;
+  background: #ccfbf1;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+/* 4a. Boutons */
+.boutons { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 4px; }
+
+.btn {
+  display: inline-block;
+  background: var(--bleu);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid var(--bleu);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.btn:hover { background: var(--bleu-fonce); border-color: var(--bleu-fonce); }
+
+.btn-secondaire {
+  background: #fff;
+  color: var(--bleu);
+}
+.btn-secondaire:hover { background: #eff6ff; color: var(--bleu-fonce); }
+
+/* 4b. Tableaux : défilent horizontalement si l'écran est petit */
+.table-wrap {
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1px solid var(--bordure);
+  margin: 12px 0 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+th {
+  background: var(--bleu-fonce);
+  color: #fff;
+  text-align: left;
+  padding: 10px 12px;
+}
+
+td {
+  padding: 10px 12px;
+  border-top: 1px solid var(--bordure);
+  vertical-align: top;
+}
+
+tbody tr:nth-child(even) td { background: #f8fafc; }
+
+/* 4c. Images et captures : figure + légende */
+figure {
+  margin: 20px 0;
+}
+
+figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--bordure);
+  box-shadow: var(--ombre);
+  background: #fff;
+}
+
+figcaption {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--texte-doux);
+}
+
+/* Encadré « à retenir » */
+.encadre {
+  background: #ecfeff;
+  border-left: 4px solid var(--turquoise);
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin: 16px 0;
+}
+
+/* Code et chemins de fichiers */
+code {
+  background: #eef2f7;
+  padding: 2px 6px;
+  border-radius: 5px;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.92em;
+}
+
+/* Liste des sources, un peu plus petite */
+.sources-liste { font-size: 0.92rem; }
+
+/* Pied de page */
+footer {
+  text-align: center;
+  color: var(--texte-doux);
+  font-size: 0.9rem;
+  padding: 32px 16px 40px;
+}
+
+/* 5. Petits écrans (téléphone) */
+@media (max-width: 640px) {
+  .hero { padding: 40px 16px 36px; }
+  .hero h1 { font-size: 1.9rem; }
+  .carte { padding: 20px; }
+  .carte h2 { font-size: 1.35rem; }
+  .grille { grid-template-columns: 1fr; }
+  td, th { padding: 8px; font-size: 0.9rem; }
+}
+
+/* Respect du réglage « réduire les animations » du système */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+/* Bloc de code (ex. la méthode setDates) : fond sombre, défilement dans son cadre
+   pour ne jamais élargir la page sur téléphone */
+pre {
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 14px 16px;
+  border-radius: 10px;
+  overflow-x: auto;
+  max-width: 100%;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+}

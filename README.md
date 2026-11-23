@@ -1,50 +1,62 @@
 # Portfolio BTS SIO – Albert
 
-Bienvenue sur mon portfolio personnel réalisé dans le cadre de ma formation en BTS SIO (Services Informatiques aux Organisations).
-<br> Voici le lien de mon site : [Portfolio](https://rival99900.github.io/Portfolio/)
+Mon portfolio personnel, réalisé dans le cadre de ma formation en BTS SIO (Services Informatiques aux Organisations, option SLAM).
 
-## 🎯 Objectif du projet
+Site en ligne : [rival99900.github.io/Portfolio](https://rival99900.github.io/Portfolio/)
 
-Ce portfolio a pour but de présenter mon parcours, mes compétences, mes projets et mes réflexions personnelles. Il est conçu pour être **simple**, **efficace** et **professionnel**, tout en reflétant mon évolution en tant qu’étudiant développeur.
+## Objectif
 
-## 🧩 Contenu du portfolio
+Présenter mon parcours, mes projets, ma veille et mes acquis pour l'épreuve E5. Le site est volontairement simple : HTML et CSS, sans framework, pour rester lisible et facile à modifier.
 
-Le site est structuré en plusieurs sections :
+## Contenu
 
-- **Présentation** : Qui je suis, pourquoi j’ai choisi le BTS SIO, mes motivations.
-- **CV** : Mon parcours scolaire, mes expériences, mes compétences techniques.
-- **Veille technologique** : Suivi des évolutions dans le domaine du développement web, notamment les frameworks JavaScript.
-- **Épreuve E5** : Synthèse de mes compétences individuelles en lien avec le référentiel du BTS SIO.
-- **Stage de première année** : Activités réalisées chez Lovotech (développement d'un chatbot IA), avec le tableau de synthèse E5 en PDF.
-- **Bilan** : Retour personnel sur les missions réalisées et les compétences acquises.
+- **Présentation** : qui je suis, mes compétences.
+- **Projets** : le projet Personnel (M2L), un éditeur de sauvegardes Bloodborne, un bot Discord, le chatbot du stage.
+- **Projet Personnel (M2L)** (`pages/projet-personnel.html`) : explications, ressources fournies, ce que j'ai fait, MCD, captures d'écran, arbre des menus, liens vers le code et la documentation.
+- **Éditeur de sauvegardes Bloodborne** (`pages/projet-bloodborne.html`) : projet personnel, fonctions, technique, tests et publication, captures d'écran, crédits.
+- **CV** : version PDF à voir ou à télécharger (`documents/cv.pdf`).
+- **Veille technologique : IA** : mes entraînements en intelligence artificielle (stage Lovotech) et les tendances de 2026, avec les sources.
+- **Épreuve E5** : synthèse de mes compétences, en lien avec le référentiel BTS SIO.
+- **Stage de première année** : chatbot IA chez Lovotech, avec le tableau de synthèse E5 en PDF (`documents/`).
+- **Bilan** : retour sur les missions réalisées et les compétences acquises.
 
-## 🛠️ Technologies utilisées
+## Organisation du projet
 
-- HTML / CSS pour la structure et le style
-- GitHub Pages pour l’hébergement
-- VS Code comme environnement de développement
-
-## 📦 Organisation du projet
-
-Le projet est organisé de manière claire :
 ```text
-portfolio/
-├── index.html 
-├── style.css 
-├── logo.png 
-├── cv.pdf 
-├── Tableau_Synthese_E5_BTS_SIO_Lovotech.pdf 
+Portfolio/
+├── index.html                          page d'accueil
+├── css/
+│   └── style.css                       toute la mise en forme (couleurs en haut du fichier)
+├── pages/
+│   ├── projet-personnel.html           page du projet Personnel (M2L)
+│   └── projet-bloodborne.html          page de l'éditeur de sauvegardes Bloodborne
+├── images/                             logo, MCD, arbre des menus, captures d'écran
+├── documents/
+│   ├── cv.pdf                          CV
+│   └── Tableau_Synthese_E5_BTS_SIO_Lovotech.pdf
 └── README.md
 ```
 
-## 🚀 Mise en ligne
+Chaque type de fichier a son dossier : la mise en forme dans `css/`, les pages secondaires dans `pages/`, les images dans `images/`, les PDF dans `documents/`. La page d'accueil reste à la racine, car GitHub Pages l'affiche par défaut.
 
-Le site est hébergé via GitHub Pages, ce qui permet une consultation facile et une mise à jour rapide.
+## Tester en local
 
-## 📌 À propos
+1. Télécharger ou cloner le dépôt.
+2. Ouvrir `index.html` dans un navigateur (double-clic).
 
-Ce projet est une vitrine de mes compétences individuelles, de ma capacité à structurer un projet, à documenter mon travail et à présenter mes acquis de manière professionnelle.
+Les liens et les images sont relatifs, donc tout fonctionne sans serveur.
 
----
+## Technologies
 
-Merci de votre visite !
+- HTML5 et CSS3 (variables CSS, grille, menu collant, adaptation aux téléphones)
+- GitHub Pages pour l'hébergement
+- VS Code comme environnement de développement
+- Git pour le suivi des modifications
+
+## Mise en ligne
+
+Le site est publié avec GitHub Pages à partir de la branche principale. Une modification est en ligne après un commit et un push.
+
+## À propos
+
+Ce projet montre ma capacité à concevoir une page claire, à documenter mon travail et à présenter mes acquis de manière professionnelle.

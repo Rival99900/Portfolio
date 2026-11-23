@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Éditeur de sauvegardes Bloodborne (projet personnel) : React, Vite, Tauri et Rust. Fonctions, technique, tests, publication et crédits.">
+  <title>Éditeur de sauvegardes Bloodborne – Albert</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/png" href="../images/logo.png">
+</head>
+<body>
+
+  <!-- En-tête de la page projet -->
+  <header class="hero">
+    <div class="hero-contenu">
+      <p class="etiquette"><a href="../index.html" style="color:#fff">← Retour au portfolio</a></p>
+      <h1>Éditeur de sauvegardes Bloodborne</h1>
+      <p class="accroche">
+        Un éditeur de sauvegardes pour le jeu Bloodborne : objets, armes, gemmes, personnage et boss.
+        C'est mon projet personnel, publié sur GitHub avec des versions à télécharger.
+      </p>
+      <ul class="tags" aria-label="Technologies">
+        <li>React</li>
+        <li>Vite</li>
+        <li>Tauri v2</li>
+        <li>Rust</li>
+        <li>Vitest</li>
+        <li>GitHub Actions</li>
+      </ul>
+    </div>
+  </header>
+
+  <nav class="menu" aria-label="Sections de la page projet">
+    <ul>
+      <li><a href="#resume">En bref</a></li>
+      <li><a href="#fonctions">Fonctions</a></li>
+      <li><a href="#captures">Captures</a></li>
+      <li><a href="#technique">Technique</a></li>
+      <li><a href="#tests">Tests et publication</a></li>
+      <li><a href="#bilan">Ce que j'ai appris</a></li>
+      <li><a href="#liens">Liens et crédits</a></li>
+    </ul>
+  </nav>
+
+  <main class="conteneur">
+
+    <!-- 1. En bref -->
+    <section id="resume" class="carte">
+      <h2>En bref</h2>
+      <p>
+        Bloodborne enregistre la progression du personnage dans un fichier de sauvegarde. Pour le modifier, il faut
+        d'abord le <strong>déchiffrer</strong> (le README du projet renvoie vers un guide). L'éditeur ouvre ce fichier
+        déchiffré, affiche les données dans une interface lisible, puis enregistre les modifications.
+      </p>
+      <p>
+        Le projet est dérivé de l'<em>éditeur de Noxde</em> : je repars de son travail et je l'ai modernisé (interface,
+        sécurité des sauvegardes, nouvelles fonctions). La licence GPL-3.0 est conservée et le crédit figure dans le README.
+      </p>
+      <div class="encadre">
+        <strong>Attention :</strong> l'outil modifie de vraies sauvegardes. Il garde un fichier <code>.bak</code> et des copies
+        datées, mais la règle reste la même : avant toute modification, on garde une copie indépendante de sa sauvegarde.
+      </div>
+    </section>
+
+    <!-- 2. Fonctions -->
+    <section id="fonctions" class="carte">
+      <h2>Ce que fait l'éditeur</h2>
+      <div class="grille">
+        <article class="carte-mini">
+          <h3>Inventaire et stockage</h3>
+          <p>Ajouter des objets, armes, armures et gemmes. Recherche, favoris, compteur de cases libres, export et import en JSON ou CSV.</p>
+        </article>
+        <article class="carte-mini">
+          <h3>Gemmes et runes</h3>
+          <p>
+            Modifier la forme, la qualité et les six effets d'une gemme. Le <em>Gem Forge</em> propose des presets, un créateur
+            d'effets personnalisés et une bibliothèque « Mes presets » exportable en JSON.
+          </p>
+        </article>
+        <article class="carte-mini">
+          <h3>Personnage</h3>
+          <p>Attributs avec contrôle de cohérence, allumage et extinction des lampes, boss, flags et PNJ.</p>
+        </article>
+        <article class="carte-mini">
+          <h3>Outils</h3>
+          <p>
+            Assistant de trophées (Hunter's Essence, Hunter's Craft, Weapon Master), recherche de gemmes par effet
+            et comparaison de deux sauvegardes.
+          </p>
+        </article>
+        <article class="carte-mini">
+          <h3>Pont FTP PS4 / PS5</h3>
+          <p>
+            Ouvrir, renvoyer, importer ou supprimer une sauvegarde directement sur la console (GoldHEN sur PS4,
+            etaHEN sur PS5). La version présente sur la console est gardée en local avant tout remplacement.
+          </p>
+        </article>
+        <article class="carte-mini">
+          <h3>Sécurité et langues</h3>
+          <p>
+            Un fichier <code>.bak</code> à l'ouverture, des copies datées, annuler et rétablir, et des opérations groupées
+            testées sur une copie avant d'être appliquées. Interface disponible en 14 langues.
+          </p>
+        </article>
+      </div>
+      <div class="encadre">
+        <strong>Pourquoi les copies comptent :</strong> le pont FTP envoie des fichiers sur une console. Une erreur peut
+        remplacer la sauvegarde du jeu, d'où la copie locale faite avant chaque remplacement.
+      </div>
+    </section>
+
+    <!-- 3. Captures d'écran -->
+    <section id="captures" class="carte">
+      <h2>Captures d'écran</h2>
+      <p>Les captures viennent du README du dépôt. Les sauvegardes affichées sont des exemples.</p>
+
+      <figure>
+        <img src="../images/bloodborne-editeur.webp" alt="Fenêtre de l'éditeur : liste de l'inventaire, sauvegarde userdata0001 chargée, bouton Save changes en haut à droite." width="900" height="472" loading="lazy">
+        <figcaption>Vue d'ensemble (v0.7.5) : sauvegarde chargée, aucune modification en attente, liste de l'inventaire.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="../images/bloodborne-gem-forge.webp" alt="Fenêtre d'édition d'une gemme : image de la gemme, forme Radial, qualité 1 et six effets." width="900" height="473" loading="lazy">
+        <figcaption>Gem Forge (capture de la v0.7.0) : une gemme de sang en édition, avec sa forme, sa qualité et ses six effets.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="../images/bloodborne-outils.webp" alt="Page Outils : boutons Trophées, Gem finder et Compare two saves, puis les trophées Hunter's Essence et Hunter's Craft." width="900" height="473" loading="lazy">
+        <figcaption>Page Outils (v0.7.5) : trophées de collection et recherche de gemmes par effet.</figcaption>
+      </figure>
+    </section>
+
+    <!-- 4. Technique -->
+    <section id="technique" class="carte">
+      <h2>Comment c'est fait</h2>
+      <p>L'application de bureau combine deux parties, chacune avec son rôle :</p>
+      <ul>
+        <li><strong>L'interface</strong> (React + Vite) : les écrans, les listes et les formulaires.</li>
+        <li><strong>Le cœur</strong> (Rust, dossier <code>src-tauri</code>) : lit et écrit les données de la sauvegarde, vérifie les combinaisons et gère le pont FTP.</li>
+        <li><strong>Tauri v2</strong> : relie les deux. L'interface appelle des commandes Rust, et Tauri empaquette le tout en installateur.</li>
+      </ul>
+      <p>
+        Une sauvegarde est un fichier d'octets. Chaque information (argent, niveau, gemme…) se trouve à une position connue,
+        et l'éditeur sait donc où lire et où écrire. Une gemme, par exemple, est un enregistrement de 40 octets :
+        identifiant, source, type, forme et six effets.
+      </p>
+      <pre><code>src/          interface React (écrans, composants, traductions)
+src-tauri/    cœur Rust (commandes, lecture et écriture des sauvegardes)
+.github/      workflow de publication (GitHub Actions)</code></pre>
+    </section>
+
+    <!-- 5. Tests et publication -->
+    <section id="tests" class="carte">
+      <h2>Tests et publication</h2>
+      <h3>Tests</h3>
+      <ul>
+        <li><strong>Vitest</strong> (<code>npm test</code>) pour la logique en JavaScript.</li>
+        <li><strong>ESLint</strong> (<code>npm run lint</code>) et <strong>Prettier</strong> (<code>npm run format</code>) gardent le code lisible et uniforme.</li>
+        <li>Les tests d'interface avec Playwright sont en préparation pour la prochaine version.</li>
+        <li><strong>Tests Rust</strong> (<code>cargo test</code>) et <strong>Clippy</strong> avec <code>-D warnings</code> : aucun avertissement n'est toléré.</li>
+        <li><code>npm run validate</code> vérifie les traductions, les fonctionnalités et les notes de version.</li>
+      </ul>
+      <h3>Publication</h3>
+      <ul>
+        <li>
+          Un workflow GitHub Actions se lance quand un commit sur <code>main</code> contient le marqueur
+          <code>[release]</code>. Il construit l'installateur Windows (NSIS et MSI) et l'AppImage Linux, les signe et publie la version.
+        </li>
+        <li>L'application vérifie au démarrage un fichier <code>latest.json</code> signé pour proposer la mise à jour.</li>
+        <li>Les clés de signature sont des secrets GitHub : elles ne sont jamais dans le code.</li>
+      </ul>
+      <div class="encadre">
+        <strong>Un piège rencontré :</strong> l'ajout d'une arme fonctionnait dans l'interface, mais le jeu plantait au
+        chargement de la sauvegarde modifiée. Seul un test sur la console a permis de le voir. La méthode qui écrasait
+        des données a été remplacée par une insertion. Les tests automatiques ne remplacent pas un test réel.
+      </div>
+    </section>
+
+    <!-- 6. Bilan -->
+    <section id="bilan" class="carte">
+      <h2>Ce que j'ai appris</h2>
+      <ul>
+        <li>Faire évoluer un code que je n'ai pas écrit, en avançant par petites modifications vérifiées.</li>
+        <li>Une modification de sauvegarde peut casser le jeu : il faut une copie, des tests et un test réel.</li>
+        <li>Publier un logiciel : versions, mise à jour automatique, signature, documentation pour les utilisateurs.</li>
+        <li>Respecter une licence et créditer les auteurs d'origine.</li>
+      </ul>
+    </section>
+
+    <!-- 7. Liens et crédits -->
+    <section id="liens" class="carte">
+      <h2>Liens et crédits</h2>
+      <h3>Code et téléchargement</h3>
+      <ul>
+        <li><a href="https://github.com/Rival99900/Bloodborne-save-editor-enhanced" target="_blank" rel="noopener">Dépôt GitHub du projet</a></li>
+        <li><a href="https://github.com/Rival99900/Bloodborne-save-editor-enhanced/releases" target="_blank" rel="noopener">Versions à télécharger (Releases)</a></li>
+        <li><a href="https://github.com/Noxde/Bloodborne-save-editor" target="_blank" rel="noopener">Éditeur d'origine de Noxde</a></li>
+      </ul>
+      <h3>Documentation utilisée</h3>
+      <ul>
+        <li><a href="https://v2.tauri.app/" target="_blank" rel="noopener">Tauri v2</a> (empaqueter une interface web en application de bureau)</li>
+        <li><a href="https://react.dev/" target="_blank" rel="noopener">React</a> (les composants de l'interface)</li>
+        <li><a href="https://vitest.dev/" target="_blank" rel="noopener">Vitest</a> (les tests unitaires en JavaScript)</li>
+      </ul>
+      <h3>Crédits</h3>
+      <ul>
+        <li><strong>Noxde</strong> : projet d'origine, sous licence GPL-3.0.</li>
+        <li><strong>valentinoamato</strong> : méthode d'insertion d'armes et d'armures, et correction d'un emplacement de la sauvegarde.</li>
+        <li><strong>Argagaes</strong> : table des lampes utilisée pour le contrôle des lampes.</li>
+        <li><strong>Apollo</strong> : catalogues des patchs.</li>
+      </ul>
+      <p>Projet non officiel, non affilié à FromSoftware ni à Sony.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Albert – <a href="../index.html">Retour au portfolio</a></p>
+  </footer>
+
+</body>
+</html>
