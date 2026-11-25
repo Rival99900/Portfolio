@@ -11,9 +11,10 @@ Présenter mon parcours, mes projets, ma veille et mes acquis pour l'épreuve E5
 ## Contenu
 
 - **Présentation** : qui je suis, mes compétences.
-- **Projets** : le projet Personnel (M2L), un éditeur de sauvegardes Bloodborne, un bot Discord, le chatbot du stage.
+- **Projets** : le projet Personnel (M2L), un éditeur de sauvegardes Bloodborne, un site de révisions BTS SIO, un bot Discord, le chatbot du stage.
 - **Projet Personnel (M2L)** (`pages/projet-personnel.html`) : explications, ressources fournies, ce que j'ai fait, MCD, captures d'écran, arbre des menus, liens vers le code et la documentation.
 - **Éditeur de sauvegardes Bloodborne** (`pages/projet-bloodborne.html`) : projet personnel, fonctions, technique, tests et publication, captures d'écran, crédits.
+- **Révisions BTS SIO** (`pages/projet-revision-bts-sio.html`) : site de révision interactif, organisation du site, captures d'écran et liens.
 - **CV** : version PDF à voir ou à télécharger (`documents/cv.pdf`).
 - **Veille technologique : IA** : mes entraînements en intelligence artificielle (stage Lovotech) et les tendances de 2026, avec les sources.
 - **Épreuve E5** : synthèse de mes compétences, en lien avec le référentiel BTS SIO.
@@ -29,7 +30,8 @@ Portfolio/
 │   └── style.css                       toute la mise en forme (couleurs en haut du fichier)
 ├── pages/
 │   ├── projet-personnel.html           page du projet Personnel (M2L)
-│   └── projet-bloodborne.html          page de l'éditeur de sauvegardes Bloodborne
+│   ├── projet-bloodborne.html          page de l'éditeur de sauvegardes Bloodborne
+│   └── projet-revision-bts-sio.html    page du site de révisions BTS SIO
 ├── images/                             logo, MCD, arbre des menus, captures d'écran
 ├── documents/
 │   ├── cv.pdf                          CV

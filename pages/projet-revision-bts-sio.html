@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Révisions BTS SIO (projet personnel) : site de révision interactif pour les deux années, avec fiches, quiz de 629 questions et Code Lab. Fonctions, organisation, technique et liens.">
+  <title>Révisions BTS SIO – Albert</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/png" href="../images/logo.png">
+</head>
+<body>
+
+  <!-- En-tête de la page projet -->
+  <header class="hero">
+    <div class="hero-contenu">
+      <p class="etiquette"><a href="../index.html" style="color:#fff">← Retour au portfolio</a></p>
+      <h1>Révisions BTS SIO</h1>
+      <p class="accroche">
+        Un site de révision interactif pour les deux années de BTS SIO : fiches par matière, quiz de 629 questions
+        et un Code Lab pour tester du code directement dans le navigateur. Je l'ai conçu pour réviser, et je le
+        partage avec ma classe.
+      </p>
+      <ul class="tags" aria-label="Technologies">
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+        <li>Pyodide</li>
+        <li>Judge0</li>
+        <li>GitHub Pages</li>
+      </ul>
+    </div>
+  </header>
+
+  <nav class="menu" aria-label="Sections de la page projet">
+    <ul>
+      <li><a href="#resume">En bref</a></li>
+      <li><a href="#fonctions">Fonctions</a></li>
+      <li><a href="#captures">Captures</a></li>
+      <li><a href="#organisation">Organisation</a></li>
+      <li><a href="#technique">Technique</a></li>
+      <li><a href="#bilan">Ce que j'ai appris</a></li>
+      <li><a href="#liens">Liens</a></li>
+    </ul>
+  </nav>
+
+  <main class="conteneur">
+
+    <!-- 1. En bref -->
+    <section id="resume" class="carte">
+      <h2>En bref</h2>
+      <p>
+        Le site regroupe les fiches de 1re année et les cours de 2e année dans une seule interface, utilisable sur
+        ordinateur comme sur téléphone. Le contenu vient des supports de cours : les fiches sont courtes pour relire vite,
+        et le quiz permet de vérifier ce qu'on a retenu.
+      </p>
+      <p>
+        Le site est publié avec GitHub Pages à partir d'un dépôt GitHub. Il ne demande aucune installation : il suffit
+        d'ouvrir le lien dans un navigateur.
+      </p>
+      <div class="encadre">
+        <strong>Le site évolue :</strong> les fiches de 2e année sont ajoutées au fur et à mesure que les cours sont
+        disponibles. Le tableau de bord indique ce qui est déjà en ligne.
+      </div>
+    </section>
+
+    <!-- 2. Fonctions -->
+    <section id="fonctions" class="carte">
+      <h2>Ce que fait le site</h2>
+      <div class="grille">
+        <article class="carte-mini">
+          <h3>Fiches par matière</h3>
+          <p>
+            14 modules pour la 1re année (systèmes, réseau, RGPD, cybersécurité, algorithmique, PHP, Java, MCD, SQL,
+            maths, anglais, culture générale et CEJM avec 11 chapitres). En 2e année, des fiches sur le CEJM, le CGE,
+            les maths, le SQL, Java et la cryptographie.
+          </p>
+        </article>
+        <article class="carte-mini">
+          <h3>Quiz interactif</h3>
+          <p>
+            629 questions, en QCM ou à saisir. Filtres par année, matière (19 matières) et type, avec le score et la
+            progression.
+          </p>
+        </article>
+        <article class="carte-mini">
+          <h3>Code Lab</h3>
+          <p>
+            Un éditeur avec plusieurs fichiers (Python, PHP, Java), coloration syntaxique, numéros de ligne, annuler et
+            rétablir. Il propose 10 exercices guidés, un terminal et le téléchargement du fichier actif.
+          </p>
+        </article>
+        <article class="carte-mini">
+          <h3>Sauvegarde locale</h3>
+          <p>
+            Les brouillons sont conservés dans le navigateur, et une alerte apparaît avant de fermer une page qui contient
+            des modifications non enregistrées.
+          </p>
+        </article>
+        <article class="carte-mini">
+          <h3>Thème et mobile</h3>
+          <p>
+            Une interface inspirée d'un terminal (vert sur fond sombre). La mise en page s'adapte aux téléphones,
+            sans défilement horizontal.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. Captures d'écran -->
+    <section id="captures" class="carte">
+      <h2>Captures d'écran</h2>
+      <p>Captures prises sur le site en ligne, sur ordinateur.</p>
+
+      <figure>
+        <img src="../images/revision-accueil.webp" alt="Tableau de bord du site : titre, filtres par année, cartes de statistiques et accès au Code Lab." width="1280" height="860" loading="lazy">
+        <figcaption>Tableau de bord : 14 modules de 1re année, 11 chapitres de CEJM, 6 fiches de 2e année et le Code Lab.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="../images/revision-quiz.webp" alt="Page du quiz : filtres par année, matière et type, barre de progression et première question." width="1280" height="860" loading="lazy">
+        <figcaption>Quiz : 629 questions, avec des filtres par année, matière et type (QCM ou réponse à saisir).</figcaption>
+      </figure>
+
+      <figure>
+        <img src="../images/revision-code-lab.webp" alt="Code Lab avec la fenêtre de création d'un fichier, qui demande un nom comme main.py." width="1280" height="860" loading="lazy">
+        <figcaption>Code Lab : création d'un fichier. Le langage est détecté à partir de son extension (.py, .php, .java).</figcaption>
+      </figure>
+    </section>
+
+    <!-- 4. Organisation du site -->
+    <section id="organisation" class="carte">
+      <h2>Organisation du site</h2>
+      <p>
+        Le dépôt est organisé en trois parties : les pages de premier niveau, un dossier par année, et un dossier
+        <code>assets/</code> pour le style, les scripts et les images.
+      </p>
+      <pre><code>Revision-BTS-SIO/
+├── index.html          tableau de bord
+├── quiz.html           quiz général
+├── code-lab.html       éditeur et exercices (Python, PHP, Java)
+├── premiere/           fiches de 1re année
+│   └── cejm/           11 chapitres de CEJM
+├── deuxieme/           fiches de 2e année
+│   └── cejm/           chapitres de CEJM (droit et management)
+└── assets/
+    ├── css/            styles et thème terminal
+    ├── js/             navigation, quiz, Code Lab et banques de questions
+    └── img/            images des fiches</code></pre>
+      <div class="encadre">
+        <strong>Pourquoi cette organisation :</strong> les questions du quiz sont réparties dans plusieurs fichiers JavaScript.
+        Chaque matière est ainsi plus facile à corriger ou à compléter, sans toucher au reste du site.
+      </div>
+    </section>
+
+    <!-- 5. Technique -->
+    <section id="technique" class="carte">
+      <h2>Comment c'est fait</h2>
+      <ul>
+        <li>
+          <strong>Pas de framework</strong> : ce sont des fichiers HTML, CSS et JavaScript publiés tels quels, sans
+          étape de compilation.
+        </li>
+        <li>
+          <strong>Python dans le navigateur</strong> avec Pyodide. Le code tourne dans un <em>Web Worker</em>, pour que
+          l'interface ne se bloque pas, et l'exécution s'arrête automatiquement au bout de 10 secondes.
+        </li>
+        <li>
+          <strong>PHP et Java</strong> sont envoyés à Judge0 CE, un service qui exécute le code dans un environnement
+          isolé, puis renvoie le résultat.
+        </li>
+        <li>
+          <strong>Sauvegarde</strong> : les brouillons restent dans le <code>localStorage</code> du navigateur, donc sur
+          l'appareil utilisé.
+        </li>
+      </ul>
+      <div class="encadre">
+        <strong>Connexion :</strong> l'éditeur, les fichiers, les exercices et la sauvegarde fonctionnent hors ligne
+        une fois la page chargée. Internet est nécessaire pour charger Python et pour exécuter PHP et Java.
+      </div>
+    </section>
+
+    <!-- 6. Bilan -->
+    <section id="bilan" class="carte">
+      <h2>Ce que j'ai appris</h2>
+      <ul>
+        <li>Organiser un site statique qui grossit : une page par thème, des données séparées, des ajouts sans tout refaire.</li>
+        <li>Vérifier une page sur téléphone : tableaux, blocs de code et boutons doivent tenir dans l'écran.</li>
+        <li>Intégrer des outils externes (Pyodide, Judge0) et tenir compte de leurs limites : temps de chargement, connexion, délai d'exécution.</li>
+        <li>Mettre en ligne et documenter un projet : dépôt, README, captures et chiffres vérifiés sur le site.</li>
+      </ul>
+    </section>
+
+    <!-- 7. Liens -->
+    <section id="liens" class="carte">
+      <h2>Liens</h2>
+      <h3>Site et code</h3>
+      <ul>
+        <li><a href="https://rival99900.github.io/Revision-BTS-SIO/" target="_blank" rel="noopener">BTS SIO — Révisions complètes (site en ligne)</a></li>
+        <li><a href="https://github.com/Rival99900/Revision-BTS-SIO" target="_blank" rel="noopener">Dépôt GitHub du projet (Revision-BTS-SIO)</a></li>
+      </ul>
+      <h3>Documentation utilisée</h3>
+      <ul>
+        <li><a href="https://pyodide.org/" target="_blank" rel="noopener">Pyodide</a> (exécuter Python dans le navigateur)</li>
+        <li><a href="https://judge0.com/" target="_blank" rel="noopener">Judge0</a> (exécuter PHP et Java dans un environnement isolé)</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Albert – <a href="../index.html">Retour au portfolio</a></p>
+  </footer>
+
+</body>
+</html>
